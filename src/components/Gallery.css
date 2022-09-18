@@ -1,0 +1,23 @@
+#gallery-frame {
+    position: relative;
+}
+
+#current-img {
+    width: 100%;
+    max-height: 415px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+#prev {
+    position: absolute;
+    top: 42%;
+    left: 30px;
+    transform: rotate(180deg);
+}
+
+#next {
+    position: absolute;
+    top: 42%;
+    right: 30px;
+}

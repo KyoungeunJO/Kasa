@@ -1,0 +1,35 @@
+.textcard-dropdown {
+    width: 80%;
+    height: fit-content;
+    margin-bottom: 40px;
+    background-color: #F6F6F6;
+    border-radius: 5px;
+}
+
+.textcard-dropdown > p {
+    color: #FF6060;
+    padding: 1.5rem 1rem;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF6060;
+    color: #FFFFFF;
+    padding: 0.5rem;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.dropdown-icon {
+    margin-right: 20px;
+    rotate: 180deg;
+}
+
+.dropdown-header > h2 {
+    margin: 0;
+    padding: 0 0.5rem;
+}
