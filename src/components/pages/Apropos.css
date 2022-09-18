@@ -1,0 +1,11 @@
+#image-a-propos {
+    border-radius: 25px;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.container-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
