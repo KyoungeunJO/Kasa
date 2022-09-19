@@ -13,6 +13,16 @@
     font-size: 1.5rem;
 }
 
+.dropdown-header[data-open=true] > img {
+    transform: rotate(180deg);
+    transition: all 200ms;
+}
+
+.dropdown-header[data-open=false] > img {
+    transform: rotate(0deg);
+    transition: all 200ms;
+}
+
 .dropdown-header {
     display: flex;
     justify-content: space-between;
@@ -32,4 +42,23 @@
 .dropdown-header > h2 {
     margin: 0;
     padding: 0 0.5rem;
+}
+
+@media screen and (max-width: 375px)
+{
+    .textcard-dropdown {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .dropdown-header > h2 {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .textcard-dropdown > p {
+        font-size: 12px;
+        font-weight: 400;
+        padding: 1rem 0.5rem 2rem 1rem;
+    }
 }

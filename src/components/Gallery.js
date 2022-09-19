@@ -18,6 +18,7 @@ export default function Gallery({ data }) {
             { n > 1 && <img src={drop} id="prev" role="button" alt="" onClick={() => moveImg(-1)} /> }
             { n > 1 && <img src={drop} id="next" role="button" alt="" onClick={() => moveImg(1)} /> }
             <img src={data[index]} id="current-img" alt="Accomodation pics" />
+            { n > 1 && <span>{`${index+1}/${n}`}</span>}
         </div>
     )
 }

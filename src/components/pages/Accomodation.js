@@ -2,6 +2,7 @@ import './Accomodation.css'
 import Dropdown from '../Dropdown';
 import Tag from "../Tag";
 import Gallery from '../Gallery';
+import { useNavigate } from 'react-router';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import star from '../../images/star.svg';
@@ -10,6 +11,7 @@ import stargrey from '../../images/star-grey.svg';
 function Accomodation() {
 
     let { id } = useParams()
+    let nav = useNavigate()
 
     let [accomodation, setAccomodation] = useState({})
 
@@ -20,7 +22,11 @@ function Accomodation() {
         })
         .then(data => data.json())
         .then(data => { 
-            return data.filter(a => a.id === id)[0] 
+            const accomodationData = data.filter(a => a.id === id)
+            if (accomodationData.length > 0) {
+                return accomodationData[0]
+            }
+            nav('/notfound')
         })
         .then(data => setAccomodation(data))
         .catch(error => console.log(error))
@@ -30,37 +36,39 @@ function Accomodation() {
         return (
             <div className='container'>
                 <Gallery data={accomodation.pictures} />
-                <div className='accomodation-header'>
-                    <div className='title-location'>
-                        <h1>{accomodation.title}</h1>
-                        <p>{accomodation.location}</p>
-                    </div>
-                    <div className='info-host'>
-                        <p className='name-host'>{accomodation.host.name}</p>
-                        <img src={accomodation.host.picture} id='photo-host' alt='profil of host' />
-                    </div>
-                </div>
-
-                <div className="accomodation-details">
-                    <div className="tags-container">
-                        {accomodation.tags.map(tag => {
-                            return (
-                                <Tag><span>{tag}</span></Tag>
-                            )
-                        })}
+                <div className='accomation-info'>    
+                    <div className='accomodation-header'>
+                        <div className='title-location'>
+                            <h1>{accomodation.title}</h1>
+                            <p>{accomodation.location}</p>
+                        </div>
+                        <div className="tags-container">
+                            {accomodation.tags.map(tag => {
+                                return (
+                                    <Tag><span>{tag}</span></Tag>
+                                )
+                            })}
+                        </div>
                     </div>
 
-                    <div className="stars-container">
-                        {[...Array(parseInt(accomodation.rating))].map(s => {
-                            return (
-                                <img src={star} alt="" className="star" />
-                            )
-                        })}
-                        {[...Array(5 - parseInt(accomodation.rating))].map(s => {
-                            return (
-                                <img src={stargrey} alt="" className="star" />
-                            )
-                        })}
+                    <div className="accomodation-details">
+                        <div className='info-host'>
+                            <p className='name-host'>{accomodation.host.name}</p>
+                            <img src={accomodation.host.picture} id='photo-host' alt='profil of host' />
+                        </div>
+
+                        <div className="stars-container">
+                            {[...Array(parseInt(accomodation.rating))].map(s => {
+                                return (
+                                    <img src={star} alt="" className="star" />
+                                )
+                            })}
+                            {[...Array(5 - parseInt(accomodation.rating))].map(s => {
+                                return (
+                                    <img src={stargrey} alt="" className="star" />
+                                )
+                            })}
+                        </div>
                     </div>
                 </div>
 

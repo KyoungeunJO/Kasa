@@ -10,7 +10,7 @@ function Dropdown({children, title}) {
 
     return (
         <div className="textcard-dropdown">
-            <div className="dropdown-header" onClick={toogle} >
+            <div className="dropdown-header" data-open={isOpened} onClick={toogle} >
                 <h2>{title}</h2>
                 <img src={drop} className="dropdown-icon" role="button" alt="" />
             </div>

@@ -28,3 +28,14 @@ a:hover {
     background-image: linear-gradient(to top, #000000, #3b3b3b, #777777, #b9b9b9, #ffffff);
     opacity: .5;
 }
+
+@media screen and (max-width: 769px)
+{
+    header {
+        padding: 0 1rem;
+    }
+
+    #logo {
+        width: 145px;
+    }
+}

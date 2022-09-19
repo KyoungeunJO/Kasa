@@ -18,3 +18,24 @@
 .error > a {
     text-decoration: underline;
 }
+
+
+@media screen and (max-width: 375px)
+{
+    .error{
+        margin: 1rem;
+    }
+
+    .error h1 {
+        font-size: 7rem;
+    }
+
+    .error h2 {
+        font-size: 1rem;
+        margin: auto;
+    }
+
+    .error > a {
+        font-size: 0.7rem;
+    }
+}

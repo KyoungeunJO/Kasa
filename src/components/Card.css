@@ -21,6 +21,8 @@ article::before {
     content: "";
     position: absolute;
     inset: 0;
+    bottom: 5px;
+    border-radius: 10px;
     background-image: linear-gradient(to top, #000000, #3b3b3b, #777777, #b9b9b9, #ffffff);
     opacity: .3;
 }
