@@ -15,7 +15,6 @@
 @media screen and (max-width: 375px)
 {
     #image-a-propos {
-        object-fit: none;
         margin-bottom: 1rem;
     }
 }

@@ -27,6 +27,7 @@ body {
     background-image: linear-gradient(to top, #000000, #3b3b3b, #777777, #b9b9b9, #ffffff);
     opacity: .4;
     border-radius: 25px;
+    bottom: 5px;
 }
 
 .element-filter {
@@ -39,6 +40,8 @@ body {
 #image-home {
     border-radius: 25px;
     width: 100%;
+    aspect-ratio: 5/1;
+    object-fit: cover;
 }
 
 #catch-phrase {
