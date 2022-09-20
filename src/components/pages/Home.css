@@ -81,7 +81,8 @@ main {
     }
     
     #catch-phrase {
-        font-size: 1rem;
+        font-size: 1.5rem;
+        padding: 0 15px;
     }
 
     .element-filter::after {

@@ -45,7 +45,7 @@ function Accomodation() {
                         <div className="tags-container">
                             {accomodation.tags.map(tag => {
                                 return (
-                                    <Tag><span>{tag}</span></Tag>
+                                    <Tag key={tag}><span>{tag}</span></Tag>
                                 )
                             })}
                         </div>
