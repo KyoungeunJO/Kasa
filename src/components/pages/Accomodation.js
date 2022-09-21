@@ -58,14 +58,14 @@ function Accomodation() {
                         </div>
 
                         <div className="stars-container">
-                            {[...Array(parseInt(accomodation.rating))].map(s => {
+                            {[...Array(parseInt(accomodation.rating))].map((s, index) => {
                                 return (
-                                    <img src={star} alt="" className="star" />
+                                    <img src={star} alt="" className="star" key={`starFilled${index}`} />
                                 )
                             })}
-                            {[...Array(5 - parseInt(accomodation.rating))].map(s => {
+                            {[...Array(5 - parseInt(accomodation.rating))].map((s, index) => {
                                 return (
-                                    <img src={stargrey} alt="" className="star" />
+                                    <img src={stargrey} alt="" className="star" key={`starGreyed${index}`} />
                                 )
                             })}
                         </div>
@@ -78,9 +78,9 @@ function Accomodation() {
                     </Dropdown>
 
                     <Dropdown title={"Équipements"}>
-                        <p>{accomodation.equipments.map(eq => {
+                        <p>{accomodation.equipments.map((eq, index) => {
                             return (
-                                <li>{eq}</li>
+                                <li key={`ep${index}`}>{eq}</li>
                             )
                         })}</p>
                     </Dropdown>

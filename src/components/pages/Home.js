@@ -29,8 +29,8 @@ function Home() {
             <main>
                 {accomodations.map(accomodation => { 
                     return (
-                        <Link to={`/accomodation/${accomodation.id}`}>
-                            <Card data={accomodation} key={accomodation.id} >
+                        <Link to={`/accomodation/${accomodation.id}`} key={accomodation.id} >
+                            <Card data={accomodation} >
 
                             </Card>
                         </Link>
